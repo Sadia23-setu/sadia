@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string A;
+    cin >> A;
+
+    int A = 0, B = 0;
+    char op;
+
+
+    for (char c : A) {
+        if (c == '+' || c == '-' || c == '*' || c == '/') {
+            op = c;
+            break;
+        }
+    }
+
+
+    size_t pos = A.find(op);
+    A = stoi(A.substr(0, pos));
+    B = stoi(A.substr(pos + 1));
+
+    if (op == '+') cout << A + B;
+    else if (op == '-') cout << A - B;
+    else if (op == '*') cout << A * B;
+    else if (op == '/') cout << A / B;
+
+    return 0;
+}
